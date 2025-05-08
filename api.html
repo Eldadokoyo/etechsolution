@@ -1,0 +1,128 @@
+<!-- Etech API Documentation HTML -->
+<html>
+<head>
+  <title>Etech API References</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+    h2 { color: #2c3e50; }
+    h3 { color: #34495e; }
+    code, pre { background-color: #f4f4f4; padding: 10px; display: block; border-radius: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    table, th, td { border: 1px solid #ccc; }
+    th, td { padding: 10px; text-align: left; }
+  </style>
+</head>
+<body>
+
+<h1>API References</h1>
+<p>Technical documentation for integrating with our platforms</p>
+
+<hr>
+<h2>📦 Ecommerce API v2.4</h2>
+<h3>Overview</h3>
+<p>This API allows integration with Etech’s ecommerce backend to manage products, carts, and orders.</p>
+<h3>Base URL</h3>
+<code>https://api.etechds.com/v2/ecommerce</code>
+<h3>Authentication</h3>
+<code>Authorization: Bearer YOUR_API_TOKEN</code>
+<h3>Endpoints</h3>
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>GET</td><td>/products</td><td>Fetch all products</td></tr>
+  <tr><td>GET</td><td>/products/{id}</td><td>Get a specific product</td></tr>
+  <tr><td>POST</td><td>/cart</td><td>Add item to cart</td></tr>
+  <tr><td>POST</td><td>/checkout</td><td>Process an order</td></tr>
+</table>
+<h3>Request Example</h3>
+<pre>{
+  "product_id": "123",
+  "quantity": 2
+}</pre>
+<h3>Response Example</h3>
+<pre>{
+  "status": "success",
+  "cart_id": "abc456"
+}</pre>
+<h3>Status</h3>
+<p>✅ Live — Version: 2.4.1 — Updated: 10 Feb 2024</p>
+
+<hr>
+<h2>💳 Payment Gateway API v1.2</h2>
+<h3>Overview</h3>
+<p>Securely process payments via M-Pesa, credit cards, and mobile money. Includes webhook support.</p>
+<h3>Base URL</h3>
+<code>https://api.etechds.com/v1/payments</code>
+<h3>Authentication</h3>
+<code>Authorization: Bearer YOUR_SECRET_KEY</code>
+<h3>Endpoints</h3>
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>POST</td><td>/initiate</td><td>Start a payment request</td></tr>
+  <tr><td>GET</td><td>/status/{transaction_id}</td><td>Check payment status</td></tr>
+  <tr><td>POST</td><td>/webhook</td><td>Receive payment updates</td></tr>
+</table>
+<h3>Example Payment Request</h3>
+<pre>{
+  "amount": 1500,
+  "method": "mpesa",
+  "phone": "254712345678",
+  "callback_url": "https://yourapp.com/webhook"
+}</pre>
+<h3>Webhook Response</h3>
+<pre>{
+  "transaction_id": "tx1234",
+  "status": "completed"
+}</pre>
+<h3>Status</h3>
+<p>✅ Live — Version: 1.2.0 — Updated: 25 Jan 2024</p>
+
+<hr>
+<h2>📰 Content Management API v3.1</h2>
+<h3>Overview</h3>
+<p>Programmatically manage website content, media files, and user submissions.</p>
+<h3>Base URL</h3>
+<code>https://api.etechds.com/v3/content</code>
+<h3>Authentication</h3>
+<code>Authorization: Bearer YOUR_API_TOKEN</code>
+<h3>Endpoints</h3>
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>GET</td><td>/posts</td><td>List all posts</td></tr>
+  <tr><td>POST</td><td>/media/upload</td><td>Upload media file</td></tr>
+  <tr><td>PUT</td><td>/content/{id}</td><td>Update specific content</td></tr>
+</table>
+<h3>Upload Media Example</h3>
+<pre>POST /media/upload
+Content-Type: multipart/form-data
+
+{
+  "file": "banner.jpg"
+}</pre>
+<h3>Status</h3>
+<p>✅ Live — Version: 3.1.5 — Updated: 5 Feb 2024</p>
+
+<hr>
+<h2>📊 Analytics API v1.0 (Beta)</h2>
+<h3>Overview</h3>
+<p>Track user interactions, page views, and conversion events.</p>
+<h3>Base URL</h3>
+<code>https://api.etechds.com/v1/analytics</code>
+<h3>Authentication</h3>
+<code>Authorization: Bearer YOUR_API_KEY</code>
+<h3>Endpoints</h3>
+<table>
+  <tr><th>Method</th><th>Endpoint</th><th>Description</th></tr>
+  <tr><td>POST</td><td>/track</td><td>Send event data</td></tr>
+  <tr><td>GET</td><td>/reports</td><td>Retrieve analytics reports</td></tr>
+</table>
+<h3>Event Tracking Example</h3>
+<pre>{
+  "event": "button_click",
+  "user_id": "u123",
+  "page": "/home"
+}</pre>
+<h3>Status</h3>
+<p>⚠️ Beta — Version: 1.0.0 — Updated: 10 Feb 2024</p>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Client Center - Etech Digital Solution</title>
+  <meta name="description" content="Access your projects, support tickets, and technical resources through Etech's secure Client Center">
+  <meta name="keywords" content="client portal, IT support, project management, Kenya tech company, documentation, API">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Additional Styles for Client Center */
+    .resource-categories {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .category-tabs {
+      display: flex;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .tab-btn {
+      flex: 1;
+      padding: 12px 15px;
+      background: #f8f9fa;
+      border: none;
+      border-right: 1px solid #eee;
+      cursor: pointer;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.3s;
+    }
+    
+    .tab-btn:last-child {
+      border-right: none;
+    }
+    
+    .tab-btn.active {
+      background: #fff;
+      color: #3498db;
+      border-bottom: 3px solid #3498db;
+    }
+    
+    .tab-content {
+      padding: 20px;
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .documents-list, .kb-categories, .api-list {
+      margin-top: 20px;
+    }
+    
+    .document-item, .api-item {
+      display: flex;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      align-items: flex-start;
+    }
+    
+    .doc-icon, .kb-category i {
+      font-size: 24px;
+      color: #3498db;
+      margin-right: 15px;
+      min-width: 30px;
+    }
+    
+    .doc-content h5, .api-item h5 {
+      margin-bottom: 5px;
+    }
+    
+    .doc-content p, .api-item p {
+      color: #666;
+      margin-bottom: 5px;
+    }
+    
+    .doc-meta, .api-meta {
+      font-size: 12px;
+      color: #999;
+    }
+    
+    .api-meta span {
+      margin-right: 15px;
+    }
+    
+    .kb-category {
+      margin-bottom: 20px;
+    }
+    
+    .kb-category h5 {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .kb-category ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .kb-category li {
+      padding: 5px 0;
+    }
+    
+    .kb-category a {
+      color: #3498db;
+      text-decoration: none;
+    }
+    
+    .kb-category a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body class="client-center-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">Etech</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="starter-page.html" class="active">Client Center</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#documentation">Documentation</a></li>
+              <li><a href="#knowledgebase">Knowledge Base</a></li>
+              <li><a href="#api">API References</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="index.html#contact">Get Support</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Client Center</h1>
+        <p>Your secure portal for project management, support, and technical resources</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Client Center</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Client Center Section -->
+    <section id="client-center" class="client-center section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="client-login-box">
+              <h3>Client Login</h3>
+              <form class="client-login-form">
+                <div class="form-group">
+                  <label for="username">Email</label>
+                  <input type="text" id="username" class="form-control" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" class="form-control" placeholder="••••••••">
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="remember" class="form-check-input">
+                  <label for="remember" class="form-check-label">Remember me</label>
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                <div class="login-links">
+                  <a href="#">Forgot password?</a>
+                  <a href="#">First time user?</a>
+                </div>
+              </form>
+            </div>
+
+            <div class="support-box mt-4" data-aos="fade-up" data-aos-delay="150">
+              <h4>Need Immediate Help?</h4>
+              <div class="support-methods">
+                <div class="support-method">
+                  <i class="bi bi-headset"></i>
+                  <div>
+                    <h5>Support Hotline</h5>
+                    <p>+254 704 690131</p>
+                  </div>
+                </div>
+                <div class="support-method">
+                  <i class="bi bi-envelope"></i>
+                  <div>
+                    <h5>Email Support</h5>
+                    <p>support@etech.co.ke</p>
+                  </div>
+                </div>
+                <div class="support-method">
+                  <i class="bi bi-whatsapp"></i>
+                  <div>
+                    <h5>WhatsApp</h5>
+                    <p>+254 704 690131</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="client-features">
+              <h3>Client Center Features</h3>
+              <p>Access all your project resources and support options in one secure location</p>
+              
+              <div class="features-grid">
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-kanban"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Project Dashboard</h4>
+                    <p>Track progress, milestones, and deliverables in real-time</p>
+                  </div>
+                </div>
+                
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-ticket-detailed"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Support Tickets</h4>
+                    <p>Submit and monitor technical support requests</p>
+                  </div>
+                </div>
+                
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-file-earmark-text"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Document Repository</h4>
+                    <p>Centralized access to all project documentation</p>
+                  </div>
+                </div>
+                
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-calendar-check"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Meeting Scheduler</h4>
+                    <p>Book consultations with our technical team</p>
+                  </div>
+                </div>
+                
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-graph-up"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Analytics Reports</h4>
+                    <p>View performance metrics and usage statistics</p>
+                  </div>
+                </div>
+                
+                <div class="feature-card">
+                  <div class="feature-icon">
+                    <i class="bi bi-credit-card"></i>
+                  </div>
+                  <div class="feature-content">
+                    <h4>Billing Portal</h4>
+                    <p>Manage invoices and payments securely</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="client-resources mt-5" data-aos="fade-up" data-aos-delay="250">
+              <h3>Technical Resources</h3>
+              
+              <div class="resource-categories">
+                <div class="category-tabs">
+                  <button class="tab-btn active" data-tab="documentation">Documentation</button>
+                  <button class="tab-btn" data-tab="knowledgebase">Knowledge Base</button>
+                  <button class="tab-btn" data-tab="api">API References</button>
+                </div>
+                
+                <div class="tab-content active" id="documentation">
+                  <h4><i class="bi bi-file-earmark-text"></i> Project Documentation</h4>
+                  <p>Access all technical documentation for your projects</p>
+                  
+                  <div class="documents-list">
+                    <div class="document-item">
+                      <div class="doc-icon">
+                        <i class="bi bi-file-pdf"></i>
+                      </div>
+                      <div class="doc-content">
+                        <h5><a href="assets/docs/etech-project-guidelines.pdf" target="_blank">Etech Project Guidelines v2.1</a></h5>
+                        <p>Comprehensive guide covering our development methodologies, quality standards, and delivery processes</p>
+                        <span class="doc-meta">PDF • 2.4MB • Updated: 15 Jan 2025</span>
+                      </div>
+                    </div>
+                    
+                    <div class="document-item">
+                      <div class="doc-icon">
+                        <i class="bi bi-file-word"></i>
+                      </div>
+                      <div class="doc-content">
+                        <h5><a href="assets/docs/technical-requirements-template.docx">Technical Requirements Template</a></h5>
+                        <p>Standardized template for documenting functional and technical requirements</p>
+                        <span class="doc-meta">DOCX • 1.1MB • Version: 3.0</span>
+                      </div>
+                    </div>
+                    
+                    <div class="document-item">
+                      <div class="doc-icon">
+                        <i class="bi bi-file-earmark-ppt"></i>
+                      </div>
+                      <div class="doc-content">
+                        <h5><a href="assets/docs/security-best-practices.pptx">Security Best Practices</a></h5>
+                        <p>Implementation guide for our security standards and protocols</p>
+                        <span class="doc-meta">PPTX • 5.7MB • Updated: 5 Feb 2024</span>
+                      </div>
+                    </div>
+                    
+                    <div class="document-item">
+                      <div class="doc-icon">
+                        <i class="bi bi-file-earmark-zip"></i>
+                      </div>
+                      <div class="doc-content">
+                        <h5><a href="assets/docs/design-assets.zip">Brand Design Assets</a></h5>
+                        <p>Complete package of logos, color schemes, and style guidelines</p>
+                        <span class="doc-meta">ZIP • 12.3MB • Updated: 20 Jan 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="tab-content" id="knowledgebase">
+                  <h4><i class="bi bi-patch-question"></i> Knowledge Base</h4>
+                  <p>Find answers to common technical questions and issues</p>
+                  
+                  <div class="kb-search mb-4">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search knowledge base...">
+                      <button class="btn btn-primary" type="button">Search</button>
+                    </div>
+                  </div>
+                  
+                  <div class="kb-categories">
+                    <div class="kb-category">
+                      <h5><i class="bi bi-laptop"></i> Web Development</h5>
+                      <ul>
+                        <li><a href="kb/article-101.html">How to update website content through CMS</a></li>
+                        <li><a href="kb/article-102.html">Troubleshooting form submission issues</a></li>
+                        <li><a href="kb/article-103.html">SEO best practices for your website</a></li>
+                        <li><a href="kb/article-104.html">Managing user roles and permissions</a></li>
+                      </ul>
+                    </div>
+                    
+                    <div class="kb-category">
+                      <h5><i class="bi bi-phone"></i> Mobile Applications</h5>
+                      <ul>
+                        <li><a href="kb/article-201.html">App store submission guidelines</a></li>
+                        <li><a href="kb/article-202.html">Testing on different devices and OS versions</a></li>
+                        <li><a href="kb/article-203.html">Setting up in-app purchases</a></li>
+                        <li><a href="kb/article-204.html">Push notification configuration</a></li>
+                      </ul>
+                    </div>
+                    
+                    <div class="kb-category">
+                      <h5><i class="bi bi-shield-lock"></i> Security</h5>
+                      <ul>
+                        <li><a href="kb/article-301.html">Password management best practices</a></li>
+                        <li><a href="kb/article-302.html">Implementing two-factor authentication</a></li>
+                        <li><a href="kb/article-303.html">Monthly security audit checklist</a></li>
+                        <li><a href="kb/article-304.html">Handling data breach incidents</a></li>
+                      </ul>
+                    </div>
+                    
+                    <div class="kb-category">
+                      <h5><i class="bi bi-cloud"></i> Hosting & Deployment</h5>
+                      <ul>
+                        <li><a href="kb/article-401.html">Domain management instructions</a></li>
+                        <li><a href="kb/article-402.html">SSL certificate installation guide</a></li>
+                        <li><a href="kb/article-403.html">Backup and restore procedures</a></li>
+                        <li><a href="kb/article-404.html">Server maintenance schedules</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="tab-content" id="api">
+                  <h4><i class="bi bi-code-square"></i> API References</h4>
+                  <p>Technical documentation for integrating with our platforms</p>
+                  
+                  <div class="api-list">
+                    <div class="api-item">
+                      <h5><a href="api/ecommerce-api.html">Ecommerce API v2.4</a></h5>
+                      <p>Complete documentation for integrating with our ecommerce platform including product catalog, cart management, and order processing endpoints</p>
+                      <div class="api-meta">
+                        <span><strong>Version:</strong> 2.4.1</span>
+                        <span><strong>Last Updated:</strong> 10 Feb 2024</span>
+                        <span><strong>Status:</strong> <span class="badge bg-success">Live</span></span>
+                      </div>
+                    </div>
+                    
+                    <div class="api-item">
+                      <h5><a href="api/payment-api.html">Payment Gateway API v1.2</a></h5>
+                      <p>Integration guide for processing payments via M-Pesa, credit cards, and mobile money with webhook notifications</p>
+                      <div class="api-meta">
+                        <span><strong>Version:</strong> 1.2.0</span>
+                        <span><strong>Last Updated:</strong> 25 Jan 2024</span>
+                        <span><strong>Status:</strong> <span class="badge bg-success">Live</span></span>
+                      </div>
+                    </div>
+                    
+                    <div class="api-item">
+                      <h5><a href="api/cms-api.html">Content Management API v3.1</a></h5>
+                      <p>Programmatic access to manage website content, media assets, and user-generated content</p>
+                      <div class="api-meta">
+                        <span><strong>Version:</strong> 3.1.5</span>
+                        <span><strong>Last Updated:</strong> 5 Feb 2024</span>
+                        <span><strong>Status:</strong> <span class="badge bg-success">Live</span></span>
+                      </div>
+                    </div>
+                    
+                    <div class="api-item">
+                      <h5><a href="api/analytics-api.html">Analytics API v1.0 (Beta)</a></h5>
+                      <p>Access to business intelligence data including visitor statistics, conversion rates, and user behavior</p>
+                      <div class="api-meta">
+                        <span><strong>Version:</strong> 1.0.3</span>
+                        <span><strong>Last Updated:</strong> 18 Feb 2024</span>
+                        <span><strong>Status:</strong> <span class="badge bg-warning text-dark">Beta</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Client Center Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Etech</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Dominion Shop, Nakuru</p>
+            <p>Nakuru Kenya, KE 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+254 704 690131</span></p>
+            <p><strong>Email:</strong> <span>info@etech.co.ke</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Mobile Apps</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Cloud Solutions</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">IT Consulting</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="service-details.html">Cybersecurity</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Our Newsletter</h4>
+          <p>Subscribe to receive updates on our services and technology insights</p>
+          <form action="forms/newsletter.php" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email" placeholder="Your Email"><input type="submit" value="Subscribe"></div>
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Etech Digital Solutions</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Client Center JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tab functionality
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remove active class from all buttons and content
+          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          this.classList.add('active');
+          const tabId = this.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+          
+          // Update URL hash
+          window.location.hash = tabId;
+        });
+      });
+      
+      // Check URL hash on load
+      if(window.location.hash) {
+        const tabId = window.location.hash.substring(1);
+        const tabBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if(tabBtn) {
+          tabBtn.click();
+        }
+      }
+      
+      // Login form validation
+      const loginForm = document.querySelector('.client-login-form');
+      if(loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+          
+          if(!username || !password) {
+            alert('Please enter both email and password');
+            return;
+          }
+          
+          // Here you would typically send login request to server
+          alert('Login functionality would connect to your authentication system');
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
